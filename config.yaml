@@ -3,7 +3,8 @@
 # Google Gemini API Settings
 gemini:
   api_key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzE0MDQ4MjUsIm5iZiI6MTc3MTQwNDgyNSwia2V5X2lkIjoiODIxNzYwNTAtYjk4OS00ODI3LTk4NmUtYmYxY2MzYzdiMGNiIn0.nYIzycHQmThfOoqolkKZNbempJSnfTFNVB-L1vHEEE4"  # Replace with your actual API key
-  model: "gemini-2.0-flash"  # Gemini model to use
+  api_base_url: "https://mlapi.run/ee7d0772-3748-4c47-9548-de5e141da976/v1"  # Custom API base URL (leave empty for default Google endpoint)
+  model: "gemini-3-pro"  # Gemini model to use
   max_retries: 3
   retry_delay_seconds: 2
   temperature: 0.1  # Low temperature for precise extraction

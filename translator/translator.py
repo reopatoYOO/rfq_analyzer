@@ -25,8 +25,13 @@ class GeminiTranslator:
         model_name: str = "gemini-2.0-flash",
         cache_enabled: bool = True,
         cache_folder: str = "./.cache/translations",
+        api_base_url: str = "",
     ):
-        self.client = genai.Client(api_key=api_key)
+        client_kwargs = {"api_key": api_key}
+        if api_base_url:
+            from google.genai.types import HttpOptions
+            client_kwargs["http_options"] = HttpOptions(base_url=api_base_url)
+        self.client = genai.Client(**client_kwargs)
         self.model_name = model_name
         self.detector = LanguageDetector()
         self.cache_enabled = cache_enabled

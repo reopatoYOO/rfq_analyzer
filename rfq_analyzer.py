@@ -164,11 +164,14 @@ def main():
     logger.info("  PHASE 2: Language Detection & Translation")
     logger.info("=" * 40)
 
+    api_base_url = gemini_config.get("api_base_url", "")
+
     translator = GeminiTranslator(
         api_key=api_key,
-        model_name=gemini_config.get("model", "gemini-2.0-flash"),
+        model_name=gemini_config.get("model", "gemini-3-pro"),
         cache_enabled=translation_config.get("cache_enabled", True),
         cache_folder=translation_config.get("cache_folder", "./.cache/translations"),
+        api_base_url=api_base_url,
     )
 
     for doc in documents:
@@ -182,10 +185,11 @@ def main():
 
     gemini_client = GeminiClient(
         api_key=api_key,
-        model_name=gemini_config.get("model", "gemini-2.0-flash"),
+        model_name=gemini_config.get("model", "gemini-3-pro"),
         max_retries=gemini_config.get("max_retries", 3),
         retry_delay=gemini_config.get("retry_delay_seconds", 2.0),
         temperature=gemini_config.get("temperature", 0.1),
+        api_base_url=api_base_url,
     )
 
     # Filter documents
