@@ -1,0 +1,16 @@
+2026-02-18 18:03:58 [INFO] __main__: ============================================================
+2026-02-18 18:03:58 [INFO] __main__:   RFQ Spec Analyzer
+2026-02-18 18:03:58 [INFO] __main__:   Automotive Display Specification Extraction Tool
+2026-02-18 18:03:58 [INFO] __main__: ============================================================
+2026-02-18 18:03:58 [ERROR] __main__: Gemini API key is not set. Please set it in config.yaml or use --api-key argument.
+2026-02-18 18:04:55 [INFO] __main__: ============================================================
+2026-02-18 18:04:55 [INFO] __main__:   RFQ Spec Analyzer
+2026-02-18 18:04:55 [INFO] __main__:   Automotive Display Specification Extraction Tool
+2026-02-18 18:04:55 [INFO] __main__: ============================================================
+2026-02-18 18:04:55 [INFO] __main__: 
+2026-02-18 18:04:55 [INFO] __main__: ========================================
+2026-02-18 18:04:55 [INFO] __main__:   PHASE 1: Parsing Documents
+2026-02-18 18:04:55 [INFO] __main__: ========================================
+2026-02-18 18:04:55 [INFO] parsers.unified_parser: Found 0 supported files in ./input_docs
+2026-02-18 18:04:55 [INFO] parsers.unified_parser: Successfully parsed 0/0 files
+2026-02-18 18:04:55 [WARNING] __main__: No documents found in input folder. Exiting.

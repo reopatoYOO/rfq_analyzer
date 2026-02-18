@@ -1,0 +1,58 @@
+# RFQ Spec Analyzer Configuration
+
+# Google Gemini API Settings
+gemini:
+  api_key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzE0MDQ4MjUsIm5iZiI6MTc3MTQwNDgyNSwia2V5X2lkIjoiODIxNzYwNTAtYjk4OS00ODI3LTk4NmUtYmYxY2MzYzdiMGNiIn0.nYIzycHQmThfOoqolkKZNbempJSnfTFNVB-L1vHEEE4"  # Replace with your actual API key
+  model: "gemini-2.0-flash"  # Gemini model to use
+  max_retries: 3
+  retry_delay_seconds: 2
+  temperature: 0.1  # Low temperature for precise extraction
+
+# File Paths
+paths:
+  input_folder: "./input_docs"  # Folder containing RFQ documents
+  template_file: "./rfq_template.xlsx"  # Excel template file
+  output_folder: "./output"  # Output folder for results
+
+# Document Filtering Keywords (for identifying display-related documents)
+filter_keywords:
+  - display
+  - LCD
+  - TFT
+  - OLED
+  - screen
+  - cover glass
+  - optical
+  - luminance
+  - brightness
+  - touch
+  - panel
+  - backlight
+  - Anzeige        # German
+  - Bildschirm     # German
+  - Deckglas        # German
+  - écran           # French
+  - affichage       # French
+  - verre de couverture  # French
+
+# Supported file extensions
+supported_extensions:
+  - .pdf
+  - .pptx
+  - .ppt
+  - .xlsx
+  - .xls
+
+# Translation Settings
+translation:
+  source_languages:
+    - de  # German
+    - fr  # French
+  target_language: en  # English
+  cache_enabled: true
+  cache_folder: "./.cache/translations"
+
+# Logging
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR
+  log_file: "./output/rfq_analyzer.log"
