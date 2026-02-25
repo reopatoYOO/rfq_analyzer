@@ -8,6 +8,19 @@ Usage:
     python rfq_analyzer.py
     python rfq_analyzer.py --input ./input_docs --template ./rfq_template.xlsx --output ./output
     python rfq_analyzer.py --config config.yaml
+
+TODO:
+1. Input folder는 코드 하위폴더에 있지 않고, 별도의 폴더를 지정하여 읽어들일 수 있도록 한다
+2. 출력물(RFQ sheet)도 코드 하위 폴더에 위치하지 않고, 사용자로부터 지정 받을 수 있도록 한다
+3. Gemini API load error debug
+    2026-02-25 13:46:28 [WARNING] analyzer.gemini_client: Gemini API call failed (attempt 1/3): 401 None. {'error': {'message': '"Bearer" authentication is required.', 'type': 'invalid_request_error', 'code': 'bearer_authentication_required'}}
+    2026-02-25 13:46:28 [INFO] analyzer.gemini_client: Retrying in 2.0s...
+    2026-02-25 13:46:30 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+    2026-02-25 13:46:30 [INFO] httpx: HTTP Request: POST https://mlapi.run/ee7d0772-3748-4c47-9548-de5e141da976/v1/v1beta/models/gemini-3-pro:generateContent "HTTP/1.1 401 Unauthorized"
+    2026-02-25 13:46:30 [WARNING] analyzer.gemini_client: Gemini API call failed (attempt 2/3): 401 None. {'error': {'message': '"Bearer" authentication is required.', 'type': 'invalid_request_error', 'code': 'bearer_authentication_required'}}
+    2026-02-25 13:46:30 [INFO] analyzer.gemini_client: Retrying in 4.0s...
+4. RFQ Excel 양식에 대한 지정을 받을 수 있도록 한다
+        
 """
 
 import argparse
